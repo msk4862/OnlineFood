@@ -1,0 +1,22 @@
+header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items:center;
+	text-align: center;
+	background-color: #E23744;
+	color: #fff;
+	padding: 1rem;
+}
+
+.reg-form {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	margin-top: 3rem;
+	min-height: 400px;
+}
+
+.reg-form fieldset {
+	width: 420px;
+}
