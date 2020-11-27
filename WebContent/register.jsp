@@ -15,41 +15,37 @@
     	<p>Order fresh food online from your home</p>
     </header>
     <div class="reg-form">
-        <fieldset class="fieldset">
+        <fieldset>
             <legend>Create an account</legend>
             <form method="post" action="check.jsp">
-                <table>
-                    <tr>
-                        <td>Firstname</td>
-                        <td><input class="w3-input" type="text" name="fname" value="" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Lastname</td>
-                        <td><input class="w3-input" type="text" name="lname" value="" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><input class="w3-input" type="text" name="email" value="" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Username</td>
-                        <td><input class="w3-input" type="text" name="uname" value="" required/></td>
-                    </tr>
-                    <tr>
-                        <td>Password</td>
-                        <td><input class="w3-input" type="password" name="pass" value="" required/></td>
-                    </tr>
-                    
-                    <div class="btn-group">
-	                    <tr>
-	                        <td colspan="2" align="center"><input type="submit" value="Sign up" class="btn btn-success"/></td>
-	                    </tr>
-	                    <tr>
-	                        <td colspan="2" align="right">  Already have account <a href="index.jsp"><input type="button" class="btn btn-warning" value="Sign In"></a></td>
-	                    </tr>
-                    </div>
-            
-                </table>
+            	<div class="form-group row">
+				    <div class="col-sm">
+				      <input type="text" class="form-control" name="fname" placeholder="First Name" required>
+				    </div>
+            	</div>
+            	<div class="form-group row">
+				    <div class="col-sm">
+				      <input type="text" class="form-control" name="lname" placeholder="Last Name" required>
+				    </div>
+            	</div>
+				<div class="form-group row">
+				    <div class="col-sm">
+				      <input type="email" class="form-control" name="email" placeholder="Email" required>
+				    </div>
+				</div>
+				<div class="form-group row">
+				    <div class="col-sm">
+				      <input type="text" class="form-control" name="uname" placeholder="Username" required>
+				    </div>
+				</div>
+				<div class="form-group row">
+				    <div class="col-sm">
+				      <input type="password" class="form-control" name="pass" minlength="8" placeholder="Password (Min. 8 characters)" required>
+				    </div>
+				</div>
+				<input type="submit" class="btn btn-primary" value="Sign up"><br><br>
+				Already have account?<a href="index.jsp"><input type="button" class="btn btn-warning" value="Sign In"></a>
+			
             </form>
         </fieldset>
 	</div>
