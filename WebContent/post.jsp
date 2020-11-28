@@ -4,6 +4,11 @@
 
     </head>
     <body>
+    	<%
+    	if ((session.getAttribute("userid") == null)) {
+        	response.sendRedirect("index.jsp");
+		}
+    	%>
 
         <style>
             body,div,ul,li,p{

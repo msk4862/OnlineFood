@@ -1,12 +1,7 @@
 <%
-    if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
-%>
-<center>
-    <p align="center" style="font-size:45px">Foodpanda</p>
-    Session expired.
-    <a href="index.jsp" style="color:#616161;padding-top:23px">Sign in here</a>
-</center>
-<%} else {
+    if ((session.getAttribute("userid") == null)) {
+    	response.sendRedirect("index.jsp");
+	}else {
 
 %>
 <html>
