@@ -16,6 +16,8 @@ html, body {
 }
 
 body {
+	background-image: url("Images/food-wallpaper-2.jpg");
+	background-size: 100%;
 	display: flex;
 	flex-direction: column;
 }
@@ -48,9 +50,10 @@ h1 {
 		} else {
 	%>
 	<%@ include file="header.jsp"%>
+	
 	<h1>
-		Thank you for making Order.....<br> It will delivered to you
-		within next 30 minutes...
+		Thank you for making Order.....🍔<br> It will delivered to you
+		within next 30 minutes...🕒
 	</h1>
 	<div class="card text-white bg-danger mb-3 mx-auto"
 		style="width: 25rem;">

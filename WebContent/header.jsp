@@ -28,12 +28,12 @@
   	<%
   	if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
   	%>
-	<form method="post" action="login.jsp" class="form-inline ml-auto">
-	    <input class="form-control mr-sm-2" type="text" name="uname" placeholder="Username">
-	   	<input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password"/>
-	    <button class="btn btn-outline-primary my-sm-0" type="submit" name="uname">Login</button>
+	<form method="post" action="login.jsp" class="form-inline ml-auto my-2">
+	    <input class="form-control mr-sm-2" type="text" name="uname" placeholder="Username" required>
+	   	<input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password" required>
+	    <button class="btn btn-outline-primary mr-sm-2" type="submit" name="uname">Login</button>
   	</form>
-  	<a href="register.jsp"><button class="btn btn-outline-success my-2 my-sm-0 ml-2">Register</button></a>
+  	<a href="register.jsp"><button class="btn btn-outline-success my-2 my-sm-0 ml-1">Register</button></a>
   	<%
   	}else{
   	%>
