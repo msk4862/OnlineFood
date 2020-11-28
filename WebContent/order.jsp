@@ -7,18 +7,15 @@
         <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
         <!-- -//********************************************************************************************************************* -->
         <%
-            if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
-        %>
-    <p>The Session was expired..........</p><br>
-    </hr>
-    <a href="index.jsp">Click here to login again....</a>
-    <%} else {
-        float sum = 0;
-        Connection con = DbConnection.init();
-        Statement st = con.createStatement();
-        ResultSet rs;
-        String[] sports;
-    %>
+            if ((session.getAttribute("userid") == null)) {
+            	response.sendRedirect("index.jsp");
+    		} else {
+        	float sum = 0;
+        	Connection con = DbConnection.init();
+        	Statement st = con.createStatement();
+        	ResultSet rs;
+        	String[] sports;
+    	%>
     <!-- -//********************************************************************************************************************* -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Confirm your Order..</title>
