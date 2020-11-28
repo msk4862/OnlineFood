@@ -8,11 +8,14 @@ a, a:hover {
 }
 
 .jumbotron {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	color: #fff;
 	background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
 	opacity: 0.85;
-	height: calc(100vh - 30%);
-	min-height: 16rem;
+	height: calc(100vh - 40rem);
+	min-height: 18rem;
 }
 
 .jumbotron h1 {
@@ -21,7 +24,6 @@ a, a:hover {
 .jumbotron p {
 	font-size: 2rem;
 }
-
 .item-container {
 	border-style: solid;
   	border-width: 0.15rem;

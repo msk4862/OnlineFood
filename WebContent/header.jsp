@@ -21,6 +21,7 @@
   		display: inline;
   		padding: 1rem;
 	}
+		
 </style>
 
 <nav class="navbar">

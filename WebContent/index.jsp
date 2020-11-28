@@ -11,12 +11,12 @@
         <link rel="stylesheet" href="CSS/base.css" type="text/css">
     </head>
     <body>
-    <%@ include file="header.jsp" %>  
+    <%@ include file="header.jsp" %>
     
-    <div class="jumbotron">
-    	<h1>Foodpanda</h1>
-    	<p>Discover the best food & drinks in India</p>
-    </div>
+	<div class="jumbotron">
+		<h1>Foodpanda</h1>
+		<p>Discover the best food & drinks in India</p>
+	</div>
     
     <div class="container mt-4">
     	<h4>We offer following dishes...</h4>
