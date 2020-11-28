@@ -2,7 +2,6 @@
     if ((session.getAttribute("userid") == null)) {
     	response.sendRedirect("index.jsp");
 	}else {
-
 %>
 <html>
     <head>
@@ -11,7 +10,12 @@
 	    <link rel="stylesheet" href="style.css" type="text/css">
 	    <link rel="stylesheet" href="css1.css" type="text/css">
 	    <link rel="stylesheet" href="w3.css" type="text/css">
-
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="CSS/base.css" type="text/css">
+    </head>
+    <body>
+    <%@ include file="header.jsp" %>  
+    
         <script>
             var b = 0;
             function update_value(chk_bx) {

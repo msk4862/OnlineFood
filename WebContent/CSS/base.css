@@ -1,4 +1,39 @@
+p {
+	margin-bottom: 0;
+}
+
 a, a:hover {
 	color: #fff;
 	text-decoration: none;
+}
+
+.jumbotron {
+	color: #fff;
+	background-image: url("https://b.zmtcdn.com/web_assets/81f3ff974d82520780078ba1cfbd453a1583259680.png");
+	opacity: 0.85;
+	height: calc(100vh - 30%);
+	min-height: 16rem;
+}
+
+.jumbotron h1 {
+	font-size: 4rem;
+}
+.jumbotron p {
+	font-size: 2rem;
+}
+
+.item-container {
+	border-style: solid;
+  	border-width: 0.15rem;
+	border-color: #eee;
+}
+
+.item-container:hover {
+	transform: scale(1.02);
+	box-shadow: 0 5px 8px 5px rgba(0,0,0, 0.12);
+	transition: ease-in-out 0.2s;
+}
+
+.item-container img {
+	width: 100%;
 }
