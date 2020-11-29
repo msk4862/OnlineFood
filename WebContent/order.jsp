@@ -1,150 +1,91 @@
-<%@page import="com.db.utils.DbConnection"%>
-<html>
-    <head>
-        <!-- -//******************************************************************************************************************** -->
-        <%@ page import ="java.sql.*"%>
-        <%@ page import="java.util.ArrayList" %>
-        <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-        <!-- -//********************************************************************************************************************* -->
-        <%
-            if ((session.getAttribute("userid") == null)) {
-            	response.sendRedirect("index.jsp");
-    		} else {
-        	float sum = 0;
-        	Connection con = DbConnection.init();
-        	Statement st = con.createStatement();
-        	ResultSet rs;
-        	String[] sports;
-    	%>
-    <!-- -//********************************************************************************************************************* -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Confirm your Order..</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="css1.css" type="text/css">
-    <link rel="stylesheet" href="w3.css" type="text/css"></head>
-<body>
-
-    <style>
-        body,div,ul,li,p{
-            font-family:arial;
-
-        }
-        #header{
-            height:120px;
-            display:block;
-            background-color: #F5F5F5
-        }
-        #header .logo a{
-            padding-left:450px;
-            color:black;
-            text-decoration:none;
-            font-size:40px;
-        }
-        /** Navigation **/
-        #navigation {
-            display: inline-block;
-            list-style: none;
-            line-height: 50px;
-            margin: 0;
-            padding-left: 20;
-        }
-        #navigation ul {
-            display: inline-block;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        #navigation li {
-            float: left;
-            width: 180px;
-            text-align: right;
-        }
-        #navigation li a {
-            color: #616161;
-            font-size: 20px;
-            line-height: 10px;
-            text-decoration: none;
-        }
-        #navigation li a:hover {
-            font-size: 20px;
-            color: #212121;
-
-        }
-        #navigation li.active a {
-            color: black;
-            padding:12px;
-            background-color:transparent;
-            font-size:20px;
-            border: 2px solid black;
-            border-radius:10px;
-        }
-    </style>
-    <div id="header">
-        <div>
-            <div class="logo">
-                <a href="index.jsp" style="color:black">Tomato</a>
-            </div>
-            <div id="span">
-                <ul id="navigation">
-                    <li>
-                        <a href="#">Locations</a>
-                    </li>
-                    <li>
-                        <a href="#">Our chefs</a>
-                    </li>
-                    <li>
-                        <a href="#">About us</a>
-                    </li>
-                    <li>
-                        <a href="logout.jsp">Log out <i>(<%out.print(session.getAttribute("userid")); %>)</i></a>	
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-
-
-    <%  ArrayList arraylist = new ArrayList();
-        sports = request.getParameterValues("chk1");
-        out.println("&nbsp &nbsp&nbsp&nbsp&nbsp <h1 style='display:inline-block;color:#212121;padding:5px;border:2px solid #616161;'>Your cart</h1>");
-        out.println("<table class='w3-table w3-bordered'><tr><th>Item Name</th><th>Quantity</th><th>Total</th></tr>");
-        float count = 0;
-        if (sports != null) {
-            for (int i = 0; i < sports.length; i++) {
-                st.executeQuery("select item_name,price_rupee from items where id=" + sports[i] + "");
-                rs = st.getResultSet();
-                while (rs.next()) {
-                    String nameVal = rs.getString("item_name");
-                    int catVal = rs.getInt("price_rupee");
-    %><input type='hidden' id='cost' value="<%=catVal%>">
-    <%
-                arraylist.add(catVal);
-                sum += catVal;
-                int q = 1;
-                count++;
-                out.println(
-                        "<tr><td>" + nameVal + "</td><td>" + q + "</td><td><div id='total1'>" + catVal + "</div></td></tr>");
-                count += 1;
-            }
-        }
-
-        out.print("<tr><td style='font-size:30px;'>Total</td><td style='font-size:30px;'>" + count / 2 + "</td><td style='font-size:30px;'>" + sum + "</td></tr>");
-        out.print("<tr></tr><tr colspan='3'><td colspan='3'><div><a href=post.jsp><input type='button' style='width:100%' class='w3-xlarge w3-btn w3-block w3-black' value='Proceed to Checkout'> </div></td></tr>");
-    } else {
-    %>
-<tr><td></td></tr></td></tr>
-
-<% }%>
-</table>
-<h4>&nbsp<a href="success.jsp" style="color:#212121" >Shop more items</a></h4>
-
-<div id="footer" style="height:270px; display:block;">
-
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import ="java.sql.*"%>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="com.db.utils.DbConnection"%>
 
 <%
-    }
-
+	// redirect to home page if user not logged in
+   	if ((session.getAttribute("userid") == null)) {
+      	response.sendRedirect("index.jsp");
+	} 
 %>
+
+<html>
+    <head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <title>Confirm your Order</title>
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" href="CSS/order.css" type="text/css">
+	    <link rel="stylesheet" href="CSS/base.css" type="text/css">
+	</head>
+	<body>
+		<%@ include file="header.jsp" %>
+		<div class="checkout-container container">
+		
+		 <%  
+	    	Connection con = DbConnection.init();
+	    	Statement st = con.createStatement();
+	    	ResultSet rs;
+	    	ArrayList arraylist = new ArrayList<Double>();
+	    	// returns the list of item ids selected using checkboxes
+	        String[] items = request.getParameterValues("items");
+	    	
+	    	// no items are selected
+	    	// if(items == null)	response.sendRedirect("success.jsp");
+	    %>
+	    
+	    <div class="d-flex justify-content-between">
+		    <p>Items cooking in your cooker <i class="fa fa-cutlery"></i></p>
+		   	<a href="success.jsp"><button class="btn btn-primary" type="button"><i class="fa fa-cart-plus"></i> Add more items</button></a>
+	    </div>
+	    
+	    <div class="row justify-content-center">
+	    	<div class="col-12 col-sm-10">
+	    		<table class="table table-bordered">
+			    	<tr>
+			    		<th>Item Name</th><th>Quantity</th><th>Total</th>
+			    	</tr>
+			    
+				    <%
+				    	float totalAmount = 0;
+				        int totalItems = 0;
+				        if (items != null) {
+				            for (int i = 0; i < items.length; i++) {
+				                st.executeQuery("select item_name, price_rupee, item_image_url from items where id=" + items[i] + "");
+				                rs = st.getResultSet();
+				                while (rs.next()) {
+				                    String itemName = rs.getString("item_name");
+				                    String itemImageUrl = rs.getString("item_image_url");
+				                    double itemPrice = rs.getInt("price_rupee");
+					                int qunatity = 1;
+				    %>
+				    <input type='hidden' id='cost' value="<%= itemPrice %>" />
+				    <%
+				                arraylist.add(itemPrice);
+				    			totalAmount += itemPrice;
+				    			totalItems++;
+				                out.print(
+				                        "<tr><td><img alt='"+ itemName + "' src='" + itemImageUrl +"' /><span class='ml-2'>" + itemName + "</span></td><td>" + qunatity + "</td><td><div id='total1'>" + itemPrice + "</div></td></tr>");
+				            	}
+				        	}
+					%>
+					
+						<tr>
+							<td>Total</td>
+							<td><%= totalItems %></td>
+							<td><%= totalAmount %></td>
+						</tr>
+					</table>
+	    		</div>
+	   		</div>
+	    
+			<div class="d-flex justify-content-center">
+				<a href="post.jsp"><input type='button' class='btn btn-success' value='Proceed to Checkout'></a>
+			</div>
+	    	
+	    	<% } %>
+		</div>
+		<%@ include file="footer.jsp" %>
+	</body>
+</html>

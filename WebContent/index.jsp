@@ -2,6 +2,14 @@
 <%@page import="com.db.utils.DbConnection"%>
 <%@page import ="java.sql.*"%>
 
+
+<%
+	// redirect to main page if user is logged in
+   	if ((session.getAttribute("userid") != null)) {
+      	response.sendRedirect("success.jsp");
+	} 
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
