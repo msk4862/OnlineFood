@@ -3,81 +3,86 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
+<%
+	// redirect to home page if user not logged in
+   	if ((session.getAttribute("userid") == null)) {
+      	response.sendRedirect("index.jsp");
+	} 
+%>
+
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Thank You</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-html, body {
-	height: 100vh;
-	margin: 0;
-}
-
-body {
-	background-image: url("Images/food-wallpaper-2.jpg");
-	background-size: 100%;
-	display: flex;
-	flex-direction: column;
-}
-
-footer {
-	margin-top: auto;
-}
-
-h1 {
-	padding: 5rem;
-}
-</style>
-<link rel="stylesheet" href="CSS/register.css" type="text/css">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="CSS/base.css" type="text/css">
-</head>
-<body>
-
-	<%
-		if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
-	%>
-	<div align="center">
-		<img src="Images/112.gif" height=200 width=200><br> You
-		must logged in first.<br /> <a href="index.jsp"
-			style="text-decoration: none; font-size: 23px; color: #009afd; padding-top: 23px">Please
-			Login</a>
-	</div>
-	<%
-		} else {
-	%>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Thank You</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="CSS/register.css" type="text/css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="CSS/base.css" type="text/css">
+		
+		<style>
+			.receipt {
+				margin-top: 5rem;
+				margin-bottom: 5rem;
+			}
+			.receipt .card {
+				padding: 0;
+				box-shadow: 0 5px 8px 5px rgba(0,0,0, 0.12);
+			}
+			
+			.receipt .card-header {
+				background-color: #E23744;
+				color: #fff;
+			}
+			.receipt p {
+				font-size: 1.25rem;
+			}
+		</style>
+	</head>
+	<body>
 	<%@ include file="header.jsp"%>
 	
-	<h1>
-		Thank you for making Order.....🍔<br> It will delivered to you
-		within next 30 minutes...🕒
-	</h1>
-	<div class="card text-white bg-danger mb-3 mx-auto"
-		style="width: 25rem;">
-		<div class="card-header">
-			<h4>Order Details</h4>
-		</div>
-		<div class="card-body">
-			<h5 class="card-title">
-				Order number:
-				<%=(int) (Math.random() * 1e5)%></h5>
-			<h5 class="card-title">
-				Order Time:
-				<%
-				SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-					Date date = new Date();
-					out.println(formatter.format(date));
-			%>
-			</h5>
+	<div class="container mt-4">
+		
+		<h1>Thank you for making Order <i class="fa fa-cutlery"></i></h1>
+		<p>It will delivered to you within next 30 minutes...🕒</p>
+		
+		<%
+	        String name = request.getParameter("fullname");
+	        String number = request.getParameter("number");
+	        String address = request.getParameter("address");
+	        String pincode = request.getParameter("pincode");
+		%>
+		
+		<div class="row justify-content-center receipt">
+			<div class="col-12 col-sm-6 card mb-3 mx-auto">
+				<div class="card-header bg-danger">
+					<h4>Order Details</h4>
+				</div>
+				<div class="card-body">
+					<p>Order number: <strong><%=(int) (Math.random() * 1e5)%></strong></p>
+					<p>
+						Order Time:
+						<strong>
+							<%
+							SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+								Date date = new Date();
+								out.println(formatter.format(date));
+							%>
+						</strong>
+					</p>
+					<p>Name: <strong><%= name %></strong></p>
+					<p>Mobile No.: <strong><%= number %></strong></p>
+					<p>Address: <strong><%= address %></strong></p>
+					<p>Pincode: <strong><%= pincode %></strong></p>
+
+				</div>
+			</div>
 		</div>
 	</div>
+	
 	<footer><%@ include file="footer.jsp"%></footer>
-
 </body>
 </html>
-<%
-	}
-%>

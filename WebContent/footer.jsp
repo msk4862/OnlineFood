@@ -8,6 +8,11 @@
 		color: #fff;
 		padding: 1rem;
 	}
+	
+	.footer {
+		margin-top: auto;
+	}
+	
 </style>
 
 <div class="footer mt-4 text-center">
