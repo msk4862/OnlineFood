@@ -29,7 +29,7 @@
   	<%
   	if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
   	%>
-	<form method="post" action="login.jsp" class="form-inline ml-auto my-2">
+	<form method="post" action="Login" class="form-inline ml-auto my-2">
 	    <input class="form-control mr-sm-2" type="text" name="uname" placeholder="Username" required>
 	   	<input class="form-control mr-sm-2" type="password" name="pass" placeholder="Password" required>
 	    <button class="btn btn-outline-primary mr-sm-2" type="submit" name="uname">Login</button>
