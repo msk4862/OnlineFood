@@ -81,6 +81,13 @@
 				</div>
 			</div>
 		</div>
+		
+		<div class="d-flex justify-content-center">
+			<a href="index.jsp">
+				<input type="submit" class="btn btn-success btn-lg btn-block mr-2" value="Place Order" />
+				<i class="fa fa-home"></i>
+			</a>
+		</div>
 	</div>
 	
 	<footer><%@ include file="footer.jsp"%></footer>
