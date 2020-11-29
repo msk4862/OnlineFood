@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="CSS/base.css" type="text/css">
     </head>
     <body>
+    <div style="background-image: url('Images/food-wallpaper.jpg');">
     <header>
         <h1><a href="index.jsp">Foodpanda</a></h1>
     	<p>Order fresh food online from your home</p>
