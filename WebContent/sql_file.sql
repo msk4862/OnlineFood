@@ -19,6 +19,7 @@ insert into items values(12, "Coke", 60, "Images/menu_items/coke.jpg");
 insert into items values(13, "Oreo Shake", 180, "Images/menu_items/oreo_shake.jpg");
 insert into items values(14, "Vanilla Ice cream", 100, "Images/menu_items/vanilla_icecream.jpg");
 insert into items values(15, "Medium Margherita Pizza", 280, "Images/menu_items/margherita_pizza.jpg");
+insert into items values(16, "Cheese Burger", 120, "https://user-images.githubusercontent.com/24875366/100517077-3b116b80-31ae-11eb-8706-dae96d7688e4.jpg");
 
 select * from items;
 

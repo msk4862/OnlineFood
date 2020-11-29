@@ -84,8 +84,9 @@
 		
 		<div class="d-flex justify-content-center">
 			<a href="index.jsp">
-				<input type="submit" class="btn btn-success btn-lg btn-block mr-2" value="Place Order" />
-				<i class="fa fa-home"></i>
+				<button class="btn btn-success btn-lg btn-block mr-2" >
+					Return to home <i class="fa fa-home"></i>
+				</button>
 			</a>
 		</div>
 	</div>

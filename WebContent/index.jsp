@@ -46,10 +46,11 @@
                 url = result.getString(4);
                 %>
 		    	
-		    	<div class="col-12 col-sm-3 mt-2">
+		    	<div class="col-12 col-sm-3 mt-3">
 	    			<div class="item-container">
+	    				<div class="badge badge-danger">New</div>
 	    				<img alt="<%= name %>>" src="<%= url %>" class="rounded">
-	    				<div class="p-2">
+	    				<div class="p-3">
 	    					<h5><%= name %></h5>
 	    					<p>&#8377; <%= price %></p>
 	    				</div>

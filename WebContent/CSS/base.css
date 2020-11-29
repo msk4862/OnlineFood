@@ -26,16 +26,30 @@ a, a:hover {
 }
 .item-container {
 	border-style: solid;
-  	border-width: 0.15rem;
+  	border-width: 0.125rem;
 	border-color: #eee;
 }
 
 .item-container:hover {
-	transform: scale(1.02);
+	transform: scale(1.01);
 	box-shadow: 0 5px 8px 5px rgba(0,0,0, 0.12);
 	transition: ease-in-out 0.2s;
 }
 
+.item-container:hover .badge {
+	right: 0;	
+}
+
+.item-container .badge {
+	position: absolute;
+	top: 0;
+	right: 1rem;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.75rem;
+}
+				
+
 .item-container img {
 	width: 100%;
 }
+

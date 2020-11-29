@@ -30,8 +30,7 @@
 			.item-container h4 i {
 				font-size: 2rem;
 				vertical-align: middle;
-			}	
-					
+			}		
         </style>
         
         <script>
@@ -85,10 +84,11 @@
 					    	
 					    	<div class="col-12 col-sm-3 mt-2">
 				    			<div class="item-container">
+				    				<div class="badge badge-danger">New</div>
 				    				<img alt="<%= name %>>" src="<%= url %>" class="rounded">
-				    				<div class="p-2">
-				    					<h5><%= name %> <span class="badge badge-danger">New</span></h5>
-				    					<div class="d-flex flex-row justify-content-between align-items-center">
+				    				<div class="p-3">
+				    					<h5><%= name %></h5>
+				    					<div class="d-flex flex-row justify-content-between align-items-center mt-2">
 					    					<p>&#8377; <%= price %></p>	    						
 				    						<h4>
 				    							<i class="fa fa-cart-plus"></i>
@@ -102,7 +102,7 @@
 					    }
 					%>
 			    	</div>
-			    <div class="d-flex justify-content-center">
+			    <div class="d-flex justify-content-center mt-4">
 		    		<button type="submit" class="btn btn-success">
 		    			Proceed <i class="fa fa-shopping-cart"></i><span class="ml-1" id="total-items"></span>
 		    		</button>

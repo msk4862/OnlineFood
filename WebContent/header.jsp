@@ -25,7 +25,7 @@
 </style>
 
 <nav class="navbar">
-  <a class="navbar-brand" href="index.jsp">Foodpanda</a>
+  	<h1><a class="navbar-brand" href="index.jsp">Foodpanda</a></h1>
   	<%
   	if ((session.getAttribute("userid") == null) || (session.getAttribute("userid") == "")) {
   	%>
