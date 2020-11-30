@@ -2,7 +2,7 @@ use pizza_shop_db;
 show tables;
 drop table items;
 
-create table items(id int not null, item_name varchar(255) not null, price_rupee double(4, 2) not null, item_image_url varchar(512));
+create table items(id int not null, item_name varchar(255) not null, price_rupee double(5, 2) not null, item_image_url varchar(512));
 
 insert into items values(1, "Veg Burger", 99, "Images/menu_items/veg_burger.jpg");
 insert into items values(2, "Paneer Frankie", 79, "Images/menu_items/paneer_frankie.jpg");

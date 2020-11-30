@@ -17,3 +17,4 @@ $RECYCLE.BIN/
 
 #spring
 .springBeans
+*.class
