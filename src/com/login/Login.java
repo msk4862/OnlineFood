@@ -1,6 +1,7 @@
 package com.login;
 
 import java.io.IOException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,9 +27,12 @@ public class Login extends HttpServlet {
 			rs = st.executeQuery("select * from members where uname='" + userid + "' and password='" + pwd + "'");
 			if (rs.next()) {
 				session.setAttribute("userid", userid);
-		        response.sendRedirect("success.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("success.jsp");
+				rd.include(request, response);
 		    }else {
-		    	response.sendRedirect("index.jsp");
+		    	session.setAttribute("uname", "invalid");
+		    	RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+				rd.include(request, response);
 		    }
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
