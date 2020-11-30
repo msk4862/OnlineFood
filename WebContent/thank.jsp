@@ -43,11 +43,12 @@
 	</head>
 	<body>
 	<%@ include file="header.jsp"%>
-	
-	<div class="container mt-4">
-		
-		<h1>Thank you for making Order <i class="fa fa-cutlery"></i></h1>
-		<p>It will delivered to you within next 30 minutes...🕒</p>
+	<div style="background-image: url('Images/food-wallpaper.jpg');">
+	<div class="container">
+		<div class="text-center pt-4">
+			<h1>Thank you for making Order <i class="fa fa-cutlery"></i></h1>
+			<p>It will delivered to you within next 30 minutes...🕒</p>
+		</div>
 		
 		<%
 	        String name = request.getParameter("fullname");

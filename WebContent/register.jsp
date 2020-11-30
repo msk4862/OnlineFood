@@ -5,12 +5,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Registration</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/register.css" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="CSS/base.css" type="text/css">
+        <link rel="stylesheet" href="CSS/register.css" type="text/css">
     </head>
     <body>
-    <div style="background-image: url('Images/food-wallpaper.jpg');">
+	<div style="background-image: url('Images/food-wallpaper.jpg');">
     <header>
         <h1><a href="index.jsp">Foodpanda</a></h1>
     	<p>Order fresh food online from your home</p>
@@ -45,7 +45,7 @@
 				    </div>
 				</div>
 				<input type="submit" class="btn btn-primary" value="Sign up"><br><br>
-				Already have account?<a href="index.jsp"><input type="button" class="btn btn-warning" value="Sign In"></a>
+				Already have account? <a href="index.jsp"><input type="button" class="btn btn-warning" value="Sign In"></a>
 			
             </form>
         </fieldset>

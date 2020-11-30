@@ -48,6 +48,10 @@ a, a:hover {
 	font-size: 0.75rem;
 }
 				
+.bg-overlay {
+	z-index: 1;
+	background-image: url('Images/food-wallpaper.jpg');
+}
 
 .item-container img {
 	width: 100%;

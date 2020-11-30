@@ -9,14 +9,13 @@
 		<title>Delivery Details</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 		<link rel="stylesheet" href="CSS/base.css" type="text/css">
-		
 		<style>
 			.reg-form {
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				text-align: center;
-				margin-top: 1.5rem;
+				margin-bottom: 2rem;
 				min-height: 400px;
 			}
 			
@@ -28,10 +27,10 @@
 	</head>
 	<body>
 	<%@ include file="header.jsp"%>
-
-	<div class="container mt-4">
+	<div style="background-image: url('Images/food-wallpaper.jpg');">
+	<div class="container">
 			<div class="reg-form">
-				<h3>Enter Delivery Details</h3>
+				<h3 class="mt-4">Enter Delivery Details</h3>
 				<form class="col-12 col-sm-5 mt-4" method="post" action="thank.jsp">
 					<div class="form-group row">
 						<div class="col-sm">

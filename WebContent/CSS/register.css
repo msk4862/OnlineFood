@@ -13,8 +13,9 @@ header {
 	display: flex;
 	justify-content: center;
 	text-align: center;
-	margin-top: 1.5rem;
-	min-height: 400px;
+	margin-top: 2.5rem;
+	margin-bottom: 2rem;
+	min-height: 450px;
 }
 
 .reg-form fieldset {
