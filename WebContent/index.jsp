@@ -6,7 +6,7 @@
 <%
 	// redirect to main page if user is logged in
    	if ((session.getAttribute("userid") != null)) {
-      	response.sendRedirect("success.jsp");
+      	response.sendRedirect("success.jsp"); 	
 	} 
 %>
 
@@ -19,8 +19,24 @@
         <link rel="stylesheet" href="CSS/base.css" type="text/css">
     </head>
     <body>
+    <%
+	if((session.getAttribute("uname") != null)){
+		if(session.getAttribute("uname").equals("invalid")){
+	%>
+			<script src = 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>
+			<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+			<script>
+			$(document).ready(function(){
+			swal("Login Failed!", "Invalid Username or Password", "error");
+			});
+			</script>
+	<%
+		}
+	}
+    %>
     <%@ include file="header.jsp" %>
-    
+    <script src = 'https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.4/sweetalert2.all.js'></script>
+	<script src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 	<div class="jumbotron">
 		<h1>Foodpanda</h1>
 		<p>Discover the best food & drinks in India</p>
@@ -60,7 +76,6 @@
 		    }
 		%>
     	</div>
-    	
     </div>
     <%@ include file="footer.jsp" %>  
 </body>
